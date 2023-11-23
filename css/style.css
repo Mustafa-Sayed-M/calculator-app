@@ -1,0 +1,325 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+/* Variables */
+:root {
+    /* ### Colors: */
+    /* ### Theme 1 ### */
+    /* Backgrounds */
+    --Very-dark-desaturated-blue-main-bg: hsl(222, 26%, 31%); /* main background */
+    --Very-dark-desaturated-blue-keypad-bg: hsl(223, 31%, 20%); /* toggle background, keypad background */
+    --Very-dark-desaturated-blue-screen-bg: hsl(224, 36%, 15%); /* screen background */
+    /* Keys */
+    --Desaturated-dark-blue: hsl(225, 21%, 49%); /* key background */
+    --Desaturated-dark-blue-box-shadow: hsl(224, 28%, 35%); /* key shadow */
+    --Red: hsl(6, 63%, 50%); /* key background, toggle */
+    --Dark-red: hsl(6, 70%, 34%); /* key shadow */
+    --Light-grayish-orange: hsl(30, 25%, 89%); /* key background */
+    --Grayish-orange: hsl(28, 16%, 65%); /* key shadow */
+    /* Text */
+    --Very-dark-grayish-blue: hsl(221, 14%, 31%);
+    --White: hsl(0, 0%, 100%);
+    /* ### Theme 2 ### */
+    /* Backgrounds */
+    --Light-gray: hsl(0, 0%, 90%); /* main background */
+    --Grayish-red: hsl(0, 5%, 81%); /* toggle background, keypad background */
+    --Very-light-gray: hsl(0, 0%, 93%); /* screen background */
+    /* Keys */
+    --Dark-moderate-cyan: hsl(185, 42%, 37%); /* key background */
+    --Very-dark-cyan: hsl(185, 58%, 25%); /* key shadow */
+    --Orange: hsl(25, 98%, 40%);/* key background, toggle */
+    --Dark-orange: hsl(25, 99%, 27%); /* key shadow */
+    --Light-grayish-yellow: hsl(45, 7%, 89%); /* key background */
+    --Dark-grayish-orange: hsl(35, 11%, 61%); /* key shadow */
+    /* Text */
+    --Very-dark-grayish-yellow: hsl(60, 10%, 19%);
+    --White: hsl(0, 0%, 100%); /* text */
+    /* ### Theme 3 ### */
+    /* Backgrounds */
+    --Very-dark-violet-main-bg: hsl(268, 75%, 9%); /* main background */
+    --Very-dark-violet-keypad-bg: hsl(268, 71%, 12%); /* toggle background, keypad background, screen background */
+    /* Keys */
+    --Dark-violet: hsl(281, 89%, 26%); /* key background */
+    --Vivid-magenta: hsl(285, 91%, 52%); /* key shadow */
+    --Pure-cyan: hsl(176, 100%, 44%); /* key background, toggle */
+    --Soft-cyan: hsl(177, 92%, 70%); /* key shadow */
+    --Very-dark-violet: hsl(268, 47%, 21%); /* key background */
+    --Dark-magenta: hsl(290, 70%, 36%); /* key shadow */
+    /* Text */
+    --Light-yellow: hsl(52, 100%, 62%);
+    --Very-dark-blue: hsl(198, 20%, 13%);
+    --White: hsl(0, 0%, 100%); /* text */
+    
+    /* --------------------------------- */
+    /* ### Animations: */
+    /* # Transition */
+    --transition: ease-in-out 300ms;
+}
+/* GLobal Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+/* Body & Html */
+html,
+body {
+    font-size: 22px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'League Spartan', sans-serif;
+}
+/* Transition */
+.app {
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+/* Start App */
+.app {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Calc */
+.app .calc {
+    padding: 15px;
+    max-width: 600px;
+}
+.app .calc .head {
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+.app .calc .head .change-theme {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+}
+.app .calc .head .change-theme .text {
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: 5px;
+}
+.app .calc .head .change-theme .box-container {
+    row-gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.app .calc .head .change-theme .box-container .num-theme {
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: space-around;
+}
+.app .calc .head .change-theme .box-container .num-theme span {
+    opacity: 50%;
+}
+.app .calc .head .change-theme .box-container .btn-change-theme {
+    width: 70px;
+    height: 15px;
+    display: flex;
+    cursor: pointer;
+    padding: 15px 5px;
+    align-items: center;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.app .calc .head .change-theme .box-container .btn-change-theme .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.app .calc .screen {
+    padding: 20px;
+    text-align: right;
+    font-size: 2.5rem;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+.app .calc .screen.resize {
+    font-size: 1rem;
+}
+.app .calc .screen p {
+    opacity: 1;
+    font-size: 3rem;
+    margin-top: 15px;
+}
+.app .calc .body {
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.app .calc .body .btn {
+    text-align: center;
+    user-select: none;
+    font-size: 27px;
+    cursor: pointer;
+    padding: 10px;
+    width: calc(100% / 4 - 1rem);
+    padding: 15px 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+}
+.app .calc .body .btn.reset,
+.app .calc .body .btn.btn.equal {
+    flex-grow: 1;
+}
+/* Theme 1 */
+.theme-1 {
+    color: var(--White);
+    background-color: var(--Very-dark-desaturated-blue-main-bg);
+}
+.theme-1  .calc .head .change-theme .box-container .num-theme span:nth-child(1) {
+    opacity: 1;
+}
+.theme-1 .calc .head .change-theme .box-container .btn-change-theme {
+    justify-content: start;
+    background-color: var(--Very-dark-desaturated-blue-keypad-bg);
+}
+.theme-1 .calc .head .change-theme .box-container .btn-change-theme .circle {
+    background-color: var(--Red);
+}
+.theme-1 .calc .screen {
+    background-color: var(--Very-dark-desaturated-blue-screen-bg);
+}
+.theme-1 .calc .body {
+    background-color: var(--Very-dark-desaturated-blue-keypad-bg);
+}
+.theme-1 .calc .body .btn {
+    color: var(--Very-dark-grayish-blue);
+    background-color: var(--Light-grayish-orange);
+    box-shadow: 0 5px 0px var(--Grayish-orange);
+}
+.theme-1 .calc .body .btn.del,
+.theme-1 .calc .body .btn.reset {
+    color: var(--White);
+    box-shadow: 0 5px 0px var(--Desaturated-dark-blue-box-shadow);
+    background-color: var(--Desaturated-dark-blue);
+}
+.theme-1 .calc .body .btn.equal {
+    color: var(--White);
+    background-color: var(--Orange);
+    box-shadow: 0 5px 0px var(--Dark-red);
+}
+/* Theme 2 */
+.theme-2 {
+    color: var(--Very-dark-grayish-yellow);
+    background-color: var(--Light-gray);
+}
+.theme-2  .calc .head .change-theme .box-container .num-theme span:nth-child(2) {
+    opacity: 1;
+}
+.theme-2 .calc .head .change-theme .box-container .btn-change-theme {
+    justify-content: center;
+    background-color: var(--Grayish-red);
+}
+.theme-2 .calc .head .change-theme .box-container .btn-change-theme .circle {
+    background-color: var(--Red);
+}
+.theme-2 .calc .screen {
+    background-color: var(--White);
+}
+.theme-2 .calc .body {
+    background-color: var(--Grayish-red);
+}
+.theme-2 .calc .body .btn {
+    color: var(--Very-dark-grayish-blue);
+    box-shadow: 0 5px 0px var(--Dark-grayish-orange);
+    background-color: var(--Light-grayish-orange);
+}
+.theme-2 .calc .body .btn.del,
+.theme-2 .calc .body .btn.reset {
+    color: var(--White);
+    background-color: var(--Dark-moderate-cyan);
+    box-shadow: 0 5px 0px var(--Very-dark-cyan);
+}
+.theme-2 .calc .body .btn.equal {
+    color: var(--White);
+    background-color: var(--Red);
+    box-shadow: 0 5px 0px var(--Dark-orange);
+}
+/* Theme 3 */
+.theme-3 {
+    color: var(--White);
+    background-color: var(--Very-dark-violet-main-bg);
+}
+.theme-3  .calc .head .change-theme .box-container .num-theme span:nth-child(3) {
+    opacity: 1;
+}
+.theme-3 .calc .head {
+    color: var(--Light-yellow);
+}
+.theme-3 .calc .head .change-theme .box-container .btn-change-theme {
+    justify-content: end;
+    background-color: var(--Very-dark-violet-keypad-bg);
+}
+.theme-3 .calc .head .change-theme .box-container .btn-change-theme .circle {
+    background-color: var(--Pure-cyan);
+}
+.theme-3 .calc .screen {
+    color: var(--Light-yellow);
+    background-color: var(--Very-dark-violet-keypad-bg);
+}
+.theme-3 .calc .body {
+    background-color: var(--Very-dark-violet-keypad-bg);
+}
+.theme-3 .calc .body .btn {
+    color: var(--Light-yellow);
+    box-shadow: 0 5px 0px var(--Vivid-magenta);
+    background-color: var(--Very-dark-violet);
+}
+.theme-3 .calc .body .btn.del,
+.theme-3 .calc .body .btn.reset {
+    color: var(--White);
+    box-shadow: 0 5px 0px var(--Dark-magenta);
+    background-color: var(--Dark-violet);
+}
+.theme-3 .calc .body .btn.equal {
+    color: var(--White);
+    box-shadow: 0 5px 0px var(--Soft-cyan);
+    background-color: var(--Pure-cyan);
+}
+/* End App */
