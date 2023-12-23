@@ -31,12 +31,20 @@ function addThemeTarget(targetTheme) {
 // # Function to set letter to screen
 function setLetter(btn) {
     if (screen.querySelector('p')) {
+        if (screen.querySelector('p').textContent.length > 0) {
+            if (btn.dataset.type === 'operator') {
+                const currentResult = screen.querySelector('p').textContent;
+                screen.textContent = currentResult;
+            }
+        }
+    }
+
+    if (screen.querySelector('p')) {
         screen.querySelector('p').remove();;
     }
 
     if (screen.textContent.length < 15) {
         screen.textContent += btn.value;
-        console.log(btn.value);
     }
 
     if (screen.classList.contains('resize')) {
@@ -49,6 +57,7 @@ function deleteLetter() {
         screen.querySelector('p').remove();
         screen.classList.remove('resize');
     }
+
     const currentLetter = screen.textContent;
     screen.textContent = currentLetter.slice(0, currentLetter.length - 1)
 }
@@ -66,7 +75,6 @@ function calcNumbers() {
         const result = eval(screen.textContent);
         const resultEle = document.createElement('p');
         
-        console.log();
         if (Math.trunc(result) === result) {
             resultEle.textContent = result;
         } else {
